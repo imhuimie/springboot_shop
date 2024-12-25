@@ -1,11 +1,12 @@
 package com.example.shop.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -25,7 +26,7 @@ public class JwtInterceptor implements HandlerInterceptor {
             if (!jwtUtil.isExpired(token)) {
                 // 管理端页面权限校验
                 String uri = request.getRequestURI();
-                if (uri.startsWith("/a")) {
+                if (uri.startsWith("/a/")) {
                     if (jwtUtil.validateToken(token, Role.Admin)) {
                         return true;
                     }

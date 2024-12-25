@@ -1,11 +1,9 @@
 package com.example.shop.sys.controller;
 
+import io.jsonwebtoken.Claims;
 import com.example.shop.sys.dto.ShopUser;
 import com.example.shop.sys.service.AuthService;
-import com.example.shop.util.JwtUtil;
-import com.example.shop.util.R;
-import com.example.shop.util.Role;
-import io.jsonwebtoken.Claims;
+import com.example.shop.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
